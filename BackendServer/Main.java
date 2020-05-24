@@ -8,6 +8,8 @@ public class Main {
 		System.out.println("Enter port Number to run server.");
 		int port = scanner.nextInt();
 		Server server = new Server(port);
+		Thread heartBeatHandler = new Thread(new HeartBeatHandler());
+		Thread.start();
 		server.startServer();
 	}
 }
